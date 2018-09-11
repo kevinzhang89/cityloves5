@@ -2,7 +2,9 @@
 
 namespace app\models;
 
-class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
+use yii\db\ActiveRecord;
+
+class User extends ActiveRecord
 {
     public $id;
     public $username;
@@ -100,5 +102,10 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public function validatePassword($password)
     {
         return $this->password === $password;
+    }
+
+    public static function getUsername($id = 228)
+    {
+        return User::findOne(['id' => $id]);
     }
 }

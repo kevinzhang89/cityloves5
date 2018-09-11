@@ -16,6 +16,10 @@ require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/config/console.php';
 
+#引入 dotenv
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
 $application = new yii\console\Application($config);
 $exitCode = $application->run();
 exit($exitCode);

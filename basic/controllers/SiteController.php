@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -61,9 +62,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        echo getenv('DB_HOST', true);die;
-        echo 'cccc';die;
-        return $this->render('index');
+//        $user = User::getUsername('228');
+//        var_dump($user);die;
+        return $this->render('index', ['aaa' => '张勇奇']);
     }
 
     /**
